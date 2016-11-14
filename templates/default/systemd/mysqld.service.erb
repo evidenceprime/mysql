@@ -10,7 +10,8 @@ Group=<%= @config.run_group %>
 ExecStart=<%= @mysqld_bin %> --defaults-file=<%= @etc_dir %>/my.cnf --basedir=<%= @base_dir %>
 ExecStartPost=/usr/libexec/mysql-<%= @config.instance %>-wait-ready $MAINPID
 TimeoutSec=300
-PrivateTmp=true
+PrivateTmp=false
+NoNewPrivileges=yes
 
 [Install]
 WantedBy=multi-user.target
