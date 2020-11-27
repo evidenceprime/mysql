@@ -292,6 +292,8 @@ EOSQL
         @pkginfo.set['debian']['7']['5.7']['server_package'] = 'mysql-server-5.7'
         @pkginfo.set['debian']['8']['5.5']['client_package'] = %w(mysql-client libmysqlclient-dev)
         @pkginfo.set['debian']['8']['5.5']['server_package'] = 'mysql-server-5.5'
+        @pkginfo.set['debian']['9']['5.5']['client_package'] = %w(mysql-client libmysqlclient-dev)
+        @pkginfo.set['debian']['9']['5.5']['server_package'] = 'mariadb-server-10.1'
         @pkginfo.set['fedora']['20']['5.5']['client_package'] = %w(community-mysql community-mysql-devel)
         @pkginfo.set['fedora']['20']['5.5']['server_package'] = 'community-mysql-server'
         @pkginfo.set['fedora']['20']['5.6']['client_package'] = %w(mysql-community-client mysql-community-devel)
@@ -455,6 +457,7 @@ EOSQL
       return '5.5' if node['platform_family'] == 'debian' && node['platform_version'] == '14.10'
       return '5.5' if node['platform_family'] == 'debian' && node['platform_version'].to_i == 7
       return '5.5' if node['platform_family'] == 'debian' && node['platform_version'].to_i == 8
+      return '5.5' if node['platform_family'] == 'debian' && node['platform_version'].to_i == 9
       return '5.5' if node['platform_family'] == 'freebsd'
       return '5.5' if node['platform_family'] == 'omnios'
       return '5.5' if node['platform_family'] == 'rhel' && node['platform_version'].to_i == 2014
